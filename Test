@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Skyddsrond - Psykosocial arbetsmiljö</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        .question { margin-bottom: 10px; }
+        button { display: block; margin-top: 20px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Digital och Anonym Skyddsrond</h2>
+        <form id="survey-form">
+            <div class="question">
+                <label>Upplever du att din arbetsbelastning är rimlig och hållbar?</label><br>
+                <input type="radio" name="arbetsbelastning" value="Ja"> Ja
+                <input type="radio" name="arbetsbelastning" value="Nej"> Nej
+            </div>
+            
+            <div class="question">
+                <label>Finns det tydliga mål och förväntningar på ditt arbete?</label><br>
+                <input type="radio" name="mal" value="Ja"> Ja
+                <input type="radio" name="mal" value="Nej"> Nej
+            </div>
+            
+            <div class="question">
+                <label>Känner du att du har tillräckligt stöd från dina kollegor?</label><br>
+                <input type="radio" name="stöd" value="Ja"> Ja
+                <input type="radio" name="stöd" value="Nej"> Nej
+            </div>
+            
+            <button type="submit">Skicka svar</button>
+        </form>
+        <div id="result" style="display:none; margin-top:20px;">
+            <h3>Tack för dina svar!</h3>
+            <p>Dina svar har registrerats anonymt.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("survey-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("survey-form").style.display = "none";
+            document.getElementById("result").style.display = "block";
+        });
+    </script>
+</body>
+</html>
